@@ -1,5 +1,6 @@
 package com.crumbling.domain;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -11,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("fwwb_schema.Event")
 public class Event {
-  @TableId(value = "EventID")
-  private Long eventId;
+  @TableId(type = IdType.AUTO)
+  private Long id;
   private String eventName;
   private java.sql.Timestamp eventTime;
   private String eventLocation;
@@ -24,5 +25,5 @@ public class Event {
   private String pictureUrl;
   private Long type;
   private java.sql.Timestamp eventEndTime;
-  private String other;
+  private Integer delFlag;
 }

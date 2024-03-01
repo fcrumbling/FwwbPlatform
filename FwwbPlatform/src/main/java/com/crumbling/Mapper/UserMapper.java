@@ -1,7 +1,9 @@
 package com.crumbling.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.crumbling.domain.Users;
+import com.crumbling.domain.User;
+import org.springframework.stereotype.Service;
 
-public interface UserMapper extends BaseMapper<Users> {
+@Service
+public interface UserMapper extends BaseMapper<User> {
 }

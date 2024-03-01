@@ -1,14 +1,14 @@
-package com.crumbling.vo;
+package com.crumbling.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class EventListVo {
-    private Long id;
+@NoArgsConstructor
+public class AddEventDto {
     private String eventName;
     private java.sql.Timestamp eventTime;
     private String eventLocation;
@@ -17,7 +17,8 @@ public class EventListVo {
     private String videoreplayLink;
     private Long subscribersCount;
     private Long eventPopularity;
+    private String pictureUrl;
     private Long type;
     private java.sql.Timestamp eventEndTime;
-    private String pictureUrl;
+    private Integer delFlag;
 }
