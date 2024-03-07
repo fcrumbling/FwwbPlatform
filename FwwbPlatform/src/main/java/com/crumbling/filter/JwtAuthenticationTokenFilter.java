@@ -35,9 +35,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         //获取请求头中的token值
         String token = request.getHeader("token");
         //判断上面那行有没有拿到token值
-        if(!StringUtils.hasText(token)){
+        if (!StringUtils.hasText(token)) {
             //说明该接口不需要登录，直接放行，不拦截
-            filterChain.doFilter(request,response);
+            filterChain.doFilter(request, response);
             return;
         }
         //JwtUtil是我们在framework工程写的工具类。解析获取的token，把原来的密文解析为原文
@@ -57,17 +57,17 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         //在redis中，通过key来获取value，注意key我们是加过前缀的，取的时候也要加上前缀
         LoginUser loginUser = redisCache.getCacheObject("login:" + userid);
         //如果在redis获取不到值，说明登录是过期了，需要重新登录
-        if(Objects.isNull(loginUser)){
+        if (Objects.isNull(loginUser)) {
             ResponseResult result = ResponseResult.errorResult(HttpEnum.NEED_LOGIN);
             WebUtils.renderString(response, JSON.toJSONString(result));
             return;
         }
 
         //把从redis获取到的value，存入到SecurityContextHolder(Security官方提供的类)
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser,null,null);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser, null, null);
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
 
     }
 }

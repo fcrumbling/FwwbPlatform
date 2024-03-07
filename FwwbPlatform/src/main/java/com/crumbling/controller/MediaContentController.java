@@ -14,13 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class MediaContentController {
     @Autowired
     private MediaService mediaService;
+
     @GetMapping("/list")
-    public ResponseResult MediaList(Long type){
+    public ResponseResult MediaList(Long type) {
         return mediaService.MediaList(type);
     }
+
     //详情
     @GetMapping("/{id}")
-    public ResponseResult<MediaContent> GetMediaById(@PathVariable("id") Long id ){
+    public ResponseResult<MediaContent> GetMediaById(@PathVariable("id") Long id) {
         return mediaService.GetMediaById(id);
     }
 }

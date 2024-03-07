@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("fwwb_schema.MediaContent")
 public class MediaContent {
-  @TableId
-  private Long id;
-  private Long type;
-  private String content;
-  private String pictureUrl;
-  private String summary;
-  private String title;
-  private String other;
+    @TableId
+    private Long id;
+    private Long type;
+    private String content;
+    private String pictureUrl;
+    private String summary;
+    private String title;
+    private String other;
 }

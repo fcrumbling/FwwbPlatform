@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.crumbling.domain.Event;
 import com.crumbling.domain.ResponseResult;
 import com.crumbling.dto.AddEventDto;
+import com.crumbling.dto.EventDto;
 import com.crumbling.service.EventService;
 import com.crumbling.utils.BeanCopyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +15,29 @@ import org.springframework.web.bind.annotation.*;
 public class EventController {
     @Autowired
     private EventService eventService;
+
     @GetMapping("/list")
-    public ResponseResult<Event> EventList(Long type){
+    public ResponseResult<Event> EventList(Long type) {
         return eventService.eventList(type);
     }
+
     @GetMapping("/{id}")
-    public ResponseResult getEventDetail(@PathVariable("id") Long id){
+    public ResponseResult getEventDetail(@PathVariable("id") Long id) {
         return eventService.getEventDetail(id);
     }
+
     @PostMapping("/add")
-    public ResponseResult add(@RequestBody AddEventDto addEventDto){
+    public ResponseResult add(@RequestBody AddEventDto addEventDto) {
         return eventService.add(addEventDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseResult delete(@PathVariable("id") Long id) {
+        return eventService.delete(id);
+    }
+
+    @PutMapping("/edit")
+    public ResponseResult edit(@RequestBody EventDto eventDto) {
+        return eventService.edit(eventDto);
     }
 }

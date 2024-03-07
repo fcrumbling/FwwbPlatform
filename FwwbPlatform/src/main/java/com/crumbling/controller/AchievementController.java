@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class AchievementController {
     @Autowired
     private AchievementService achievementService;
+
     @GetMapping("/list")
-    public ResponseResult<Achievement> achievementList(){
+    public ResponseResult<Achievement> achievementList() {
         return achievementService.achievementList();
     }
 }

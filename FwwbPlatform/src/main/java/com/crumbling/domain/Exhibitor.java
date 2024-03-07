@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @TableName("fwwb_schema.exhibitor")
 public class Exhibitor {
-  @TableId
-  private Long id;
-  private String brand;
-  private String logourl;
-  private String posterurl;
-  private String newsinformation;
-  private String productinfomation;
-  private String other;
+    @TableId
+    private Long id;
+    private String brand;
+    private String logourl;
+    private String posterurl;
+    private String newsinformation;
+    private String productinfomation;
+    private String other;
 }

@@ -14,14 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExhibitorController {
     @Autowired
     private ExhibitorService exhibitorService;
+
     //展商列表
     @GetMapping("/list")
-    public ResponseResult exhibitorList(){
+    public ResponseResult exhibitorList() {
         return exhibitorService.exhibitorList();
     }
+
     //展商详情
     @GetMapping("/{id}")
-    public ResponseResult<Exhibitor> getExhibitorById(@PathVariable("id") Long id){
+    public ResponseResult<Exhibitor> getExhibitorById(@PathVariable("id") Long id) {
         return exhibitorService.getExhibitorById(id);
     }
 }

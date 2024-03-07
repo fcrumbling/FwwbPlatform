@@ -7,6 +7,7 @@ import com.crumbling.domain.ResponseResult;
 public interface MediaService extends IService<MediaContent> {
     //分类列表
     ResponseResult MediaList(Long type);
+
     //详情
     ResponseResult GetMediaById(Long id);
 }

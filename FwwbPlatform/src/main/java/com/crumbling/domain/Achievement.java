@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName("fwwb_schema.Achievement")
 public class Achievement {
-  @TableId
-  private Long id;
-  private String productName;
-  private String productDescription;
-  private String pictureUrl;
-  private String other;
+    @TableId
+    private Long id;
+    private String productName;
+    private String productDescription;
+    private String pictureUrl;
+    private String other;
 }

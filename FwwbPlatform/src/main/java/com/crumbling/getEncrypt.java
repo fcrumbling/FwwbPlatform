@@ -10,7 +10,7 @@ public class getEncrypt {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
         // 待加密的密码
-        String rawPassword = "crumbling";
+        String rawPassword = "123";
 
         // 加密密码
         String encodedPassword = passwordEncoder.encode(rawPassword);

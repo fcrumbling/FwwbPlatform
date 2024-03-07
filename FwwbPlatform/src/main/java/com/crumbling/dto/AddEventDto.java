@@ -20,5 +20,5 @@ public class AddEventDto {
     private String pictureUrl;
     private Long type;
     private java.sql.Timestamp eventEndTime;
-    private Integer delFlag;
+    private String other;
 }

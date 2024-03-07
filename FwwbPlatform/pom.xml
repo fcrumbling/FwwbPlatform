@@ -58,12 +58,7 @@
             <version>1.2.33</version>
         </dependency>
 
-        <!-- JWT依赖 -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
-            <version>1.0.9.RELEASE</version>
-        </dependency>
+        <!--jwt依赖-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
