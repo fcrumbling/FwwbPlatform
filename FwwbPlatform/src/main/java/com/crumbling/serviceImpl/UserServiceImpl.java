@@ -29,7 +29,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public ResponseResult updateInfo(User user) {
         Long id = SecurityUtils.getUserId();
-        user.setId(id);//
+        user.setId(id);
         updateById(user);
         return ResponseResult.okResult();
     }
@@ -76,6 +76,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String encodePassword =passwordEncoder.encode(user.getPassword());
         user.setPassword(encodePassword);
         user.setDelFlag(0);
+        user.setAdmin("0");
         //存入数据库
         save(user);
         return ResponseResult.okResult();

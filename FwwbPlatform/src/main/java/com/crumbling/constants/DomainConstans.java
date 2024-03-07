@@ -19,4 +19,8 @@ public class DomainConstans {
     public static final int COMMENT_STATUS_CURRENT=1;
     //评论列表每页数据条数
     public static final int COMMENT_STATUS_SIZE=10;
+    //注册delFlag常量
+    public static final int SIGN_STATUS=0;
+    //注册admin常量
+    public static final String SIGN_ADMIN_STATUS="0";
 }
