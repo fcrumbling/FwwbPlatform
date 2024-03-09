@@ -16,4 +16,5 @@ public interface EventService extends IService<Event> {
     ResponseResult delete(Long id);
 
     ResponseResult edit(EventDto eventDto);
+
 }

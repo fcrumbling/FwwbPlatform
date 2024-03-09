@@ -3,6 +3,7 @@ package com.crumbling.serviceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.crumbling.Mapper.UserMapper;
+import com.crumbling.constants.DomainConstans;
 import com.crumbling.domain.ResponseResult;
 import com.crumbling.domain.User;
 import com.crumbling.exception.SystemException;
@@ -75,8 +76,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         //对密码进行加密
         String encodePassword =passwordEncoder.encode(user.getPassword());
         user.setPassword(encodePassword);
-        user.setDelFlag(0);
-        user.setAdmin("0");
+        user.setDelFlag(DomainConstans.SIGN_STATUS);
+        user.setAdmin(DomainConstans.SIGN_ADMIN_STATUS);
         //存入数据库
         save(user);
         return ResponseResult.okResult();

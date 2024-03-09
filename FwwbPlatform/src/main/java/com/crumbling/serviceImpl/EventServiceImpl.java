@@ -4,25 +4,25 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.crumbling.Mapper.EventMapper;
+import com.crumbling.constants.DomainConstans;
 import com.crumbling.domain.Event;
 import com.crumbling.domain.ResponseResult;
-import com.crumbling.domain.User;
 import com.crumbling.dto.AddEventDto;
 import com.crumbling.dto.EventDto;
+import com.crumbling.enums.HttpEnum;
+import com.crumbling.exception.SystemException;
 import com.crumbling.service.EventService;
 import com.crumbling.utils.BeanCopyUtils;
 import com.crumbling.utils.SecurityUtils;
 import com.crumbling.vo.EventDetailVo;
 import com.crumbling.vo.EventListVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 
-import static com.crumbling.constants.DomainConstans.EVENT_STATUS_CURRENT;
-import static com.crumbling.constants.DomainConstans.EVENT_STATUS_SIZE;
+import static com.crumbling.constants.DomainConstans.*;
 
 @Service
 public class EventServiceImpl extends ServiceImpl<EventMapper, Event> implements EventService {
@@ -54,7 +54,12 @@ public class EventServiceImpl extends ServiceImpl<EventMapper, Event> implements
 
     @Override
     public ResponseResult add(AddEventDto addEventDto) {
+        Long id = SecurityUtils.getUserId();
+        if (id!= ADMIN_ID){
+            throw new SystemException(HttpEnum.ADMINUSER_ERROR);
+        }
         Event event = BeanCopyUtils.copyBean(addEventDto, Event.class);
+        event.setSubscribersCount(DomainConstans.EVENT_ADD_COUNT);
         eventService.save(event);
         return ResponseResult.okResult();
     }
@@ -62,6 +67,10 @@ public class EventServiceImpl extends ServiceImpl<EventMapper, Event> implements
     //-------------删除------------
     @Override
     public ResponseResult delete(Long id) {
+        Long userId = SecurityUtils.getUserId();
+        if (userId!= ADMIN_ID){
+            throw new SystemException(HttpEnum.ADMINUSER_ERROR);
+        }
         eventService.removeById(id);
         return ResponseResult.okResult();
     }
@@ -69,6 +78,10 @@ public class EventServiceImpl extends ServiceImpl<EventMapper, Event> implements
     //-------------修改--------------
     @Override
     public ResponseResult edit(EventDto eventDto) {
+        Long id = SecurityUtils.getUserId();
+        if (id!= ADMIN_ID){
+            throw new SystemException(HttpEnum.ADMINUSER_ERROR);
+        }
         Event event = BeanCopyUtils.copyBean(eventDto, Event.class);
         updateById(event);
         return ResponseResult.okResult();

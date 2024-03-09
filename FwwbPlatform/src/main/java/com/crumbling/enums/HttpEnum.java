@@ -18,6 +18,7 @@ public enum HttpEnum {
     PASSWORD_NOT_NULL(510, "密码不能为空"),
     EMAIL_NOT_NULL(511, "邮箱不能为空"),
     NICKNAME_EXIST(512, "昵称已经存在"),
+    REGISTER_EXIST(513,"已报名"),
     PHONENUMBER_NOT_NULL(521, "手机号码不能为空"),
     ADMINUSER_ERROR(522,"请使用管理员账号");
 

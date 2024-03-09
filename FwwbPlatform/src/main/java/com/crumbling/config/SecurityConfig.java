@@ -52,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/Event/{id}").authenticated()
                 .antMatchers("/Event/edit").authenticated()
                 .antMatchers("/Event/delete").authenticated()
+                .antMatchers("/Event/register").authenticated()
                 .antMatchers("/comment/list").authenticated()*/
                 // 除上面外的所有请求全部不需要认证即可访问
                 .anyRequest().permitAll();

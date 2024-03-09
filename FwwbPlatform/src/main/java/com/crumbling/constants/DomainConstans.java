@@ -23,4 +23,10 @@ public class DomainConstans {
     public static final int SIGN_STATUS=0;
     //注册admin常量
     public static final String SIGN_ADMIN_STATUS="0";
+    //管理员id
+    public static final int ADMIN_ID=1;
+    //初始化添加活动的预约/报名人数
+    public static final Long EVENT_ADD_COUNT = 0L;
+    //报名活动后增加总人数
+    public static final Long EVENT_REGISTER_ADD = 1L;
 }

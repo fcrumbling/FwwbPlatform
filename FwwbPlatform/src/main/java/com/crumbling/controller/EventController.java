@@ -1,12 +1,10 @@
 package com.crumbling.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.crumbling.domain.Event;
 import com.crumbling.domain.ResponseResult;
 import com.crumbling.dto.AddEventDto;
 import com.crumbling.dto.EventDto;
 import com.crumbling.service.EventService;
-import com.crumbling.utils.BeanCopyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
