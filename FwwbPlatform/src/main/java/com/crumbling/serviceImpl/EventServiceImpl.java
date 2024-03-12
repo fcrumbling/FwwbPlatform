@@ -14,6 +14,7 @@ import com.crumbling.exception.SystemException;
 import com.crumbling.service.EventService;
 import com.crumbling.utils.BeanCopyUtils;
 import com.crumbling.utils.SecurityUtils;
+import com.crumbling.vo.EventCountListVo;
 import com.crumbling.vo.EventDetailVo;
 import com.crumbling.vo.EventListVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,5 +86,19 @@ public class EventServiceImpl extends ServiceImpl<EventMapper, Event> implements
         Event event = BeanCopyUtils.copyBean(eventDto, Event.class);
         updateById(event);
         return ResponseResult.okResult();
+    }
+    //-------------统计--------------
+    @Override
+    public ResponseResult countlist() {
+        Long id = SecurityUtils.getUserId();
+        if (id!= ADMIN_ID){
+            throw new SystemException(HttpEnum.ADMINUSER_ERROR);
+        }
+        LambdaQueryWrapper<Event> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        Page<Event> page = new Page<>(EVENT_STATUS_CURRENT, EVENT_STATUS_SIZE);
+        page(page, lambdaQueryWrapper);
+        List<Event> events = page.getRecords();
+        List<EventCountListVo>  eventCountListVos= BeanCopyUtils.copyBeanList(events, EventCountListVo.class);
+        return ResponseResult.okResult(eventCountListVos);
     }
 }

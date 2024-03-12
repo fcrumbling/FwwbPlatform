@@ -17,4 +17,5 @@ public interface EventService extends IService<Event> {
 
     ResponseResult edit(EventDto eventDto);
 
+    ResponseResult countlist();
 }

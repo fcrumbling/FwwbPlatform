@@ -38,4 +38,8 @@ public class EventController {
     public ResponseResult edit(@RequestBody EventDto eventDto) {
         return eventService.edit(eventDto);
     }
+    @GetMapping("/count")
+    public ResponseResult count(){
+        return eventService.countlist();
+    }
 }
