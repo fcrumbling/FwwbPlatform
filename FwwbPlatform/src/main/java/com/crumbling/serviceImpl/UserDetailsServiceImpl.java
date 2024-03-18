@@ -2,7 +2,7 @@ package com.crumbling.serviceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.crumbling.domain.LoginUser;
-import com.crumbling.Mapper.UserMapper;
+import com.crumbling.mapper.UserMapper;
 import com.crumbling.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

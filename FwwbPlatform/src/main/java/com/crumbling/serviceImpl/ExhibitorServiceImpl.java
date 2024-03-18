@@ -3,7 +3,7 @@ package com.crumbling.serviceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.crumbling.Mapper.ExhibitorMapper;
+import com.crumbling.mapper.ExhibitorMapper;
 import com.crumbling.domain.Exhibitor;
 import com.crumbling.domain.ResponseResult;
 import com.crumbling.service.ExhibitorService;

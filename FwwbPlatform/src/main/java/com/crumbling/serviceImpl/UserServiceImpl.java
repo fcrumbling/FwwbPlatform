@@ -2,7 +2,7 @@ package com.crumbling.serviceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.crumbling.Mapper.UserMapper;
+import com.crumbling.mapper.UserMapper;
 import com.crumbling.constants.DomainConstans;
 import com.crumbling.domain.ResponseResult;
 import com.crumbling.domain.User;

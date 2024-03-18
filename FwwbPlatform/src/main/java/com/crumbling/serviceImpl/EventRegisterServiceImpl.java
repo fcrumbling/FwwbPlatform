@@ -2,7 +2,7 @@ package com.crumbling.serviceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.crumbling.Mapper.EventRegisterMapper;
+import com.crumbling.mapper.EventRegisterMapper;
 import com.crumbling.constants.DomainConstans;
 import com.crumbling.domain.Event;
 import com.crumbling.domain.ResponseResult;
@@ -12,7 +12,6 @@ import com.crumbling.exception.SystemException;
 import com.crumbling.service.EventRegisterService;
 import com.crumbling.service.EventService;
 import com.crumbling.utils.SecurityUtils;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

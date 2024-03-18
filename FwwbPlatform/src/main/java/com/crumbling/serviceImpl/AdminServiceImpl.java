@@ -1,7 +1,7 @@
 package com.crumbling.serviceImpl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.crumbling.Mapper.AdminMapper;
+import com.crumbling.mapper.AdminMapper;
 import com.crumbling.domain.LoginUser;
 import com.crumbling.domain.ResponseResult;
 import com.crumbling.domain.User;

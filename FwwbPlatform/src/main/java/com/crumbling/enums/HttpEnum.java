@@ -19,6 +19,8 @@ public enum HttpEnum {
     EMAIL_NOT_NULL(511, "邮箱不能为空"),
     NICKNAME_EXIST(512, "昵称已经存在"),
     REGISTER_EXIST(513,"已报名"),
+    FILE_SIZE_ERROR(514,"图片超过2MB"),
+    FILE_TYPE_ERROR(515,"仅支持jpg和png文件"),
     PHONENUMBER_NOT_NULL(521, "手机号码不能为空"),
     ADMINUSER_ERROR(522,"请使用管理员账号");
 
