@@ -9,10 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MediaListVo {
-    @TableId
     private Long id;
     private Long type;
-    private String pictureUrl;
-    private String summary;
+    private String content;
     private String title;
 }
