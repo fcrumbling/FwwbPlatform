@@ -5,6 +5,7 @@ import com.crumbling.domain.ResponseResult;
 import com.crumbling.service.AchievementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +18,9 @@ public class AchievementController {
     @GetMapping("/list")
     public ResponseResult<Achievement> achievementList() {
         return achievementService.achievementList();
+    }
+    @GetMapping("/download/{id}")
+    public ResponseResult achievementDownload(@PathVariable("id") Long id){
+        return achievementService.achievementDownload(id);
     }
 }

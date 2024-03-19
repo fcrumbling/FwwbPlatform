@@ -9,6 +9,7 @@ import com.crumbling.domain.ResponseResult;
 import com.crumbling.service.AchievementService;
 import com.crumbling.utils.BeanCopyUtils;
 import com.crumbling.vo.AchievementListVo;
+import com.crumbling.vo.AchievementSourceVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,5 +27,12 @@ public class AchievementServiceImpl extends ServiceImpl<AchievementMapper, Achie
         List<Achievement> achievement = page.getRecords();
         List<AchievementListVo> achievementListVos = BeanCopyUtils.copyBeanList(achievement, AchievementListVo.class);
         return ResponseResult.okResult(achievementListVos);
+    }
+
+    @Override
+    public ResponseResult achievementDownload(Long id) {
+        Achievement achievement = getById(id);
+        AchievementSourceVo achievementSourceVo = BeanCopyUtils.copyBean(achievement, AchievementSourceVo.class);
+        return ResponseResult.okResult(achievementSourceVo);
     }
 }

@@ -21,6 +21,8 @@ public enum HttpEnum {
     REGISTER_EXIST(513,"已报名"),
     FILE_SIZE_ERROR(514,"图片超过2MB"),
     FILE_TYPE_ERROR(515,"仅支持jpg和png文件"),
+    FILE_TYPE_ERROR2(516,"仅支持zip文件"),
+    FILE_SIZE_ERROR2(517,"压缩包超过2MB"),
     PHONENUMBER_NOT_NULL(521, "手机号码不能为空"),
     ADMINUSER_ERROR(522,"请使用管理员账号");
 

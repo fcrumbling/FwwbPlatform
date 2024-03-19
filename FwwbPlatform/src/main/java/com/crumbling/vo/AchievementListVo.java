@@ -11,5 +11,4 @@ public class AchievementListVo {
     private Long id;
     private String productName;
     private String productDescription;
-    private String pictureUrl;
 }

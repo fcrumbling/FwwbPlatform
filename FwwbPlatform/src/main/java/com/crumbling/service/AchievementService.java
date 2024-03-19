@@ -7,4 +7,6 @@ import com.crumbling.domain.ResponseResult;
 public interface AchievementService extends IService<Achievement> {
     //成果列表
     ResponseResult achievementList();
+
+    ResponseResult achievementDownload(Long id);
 }

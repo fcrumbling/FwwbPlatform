@@ -12,7 +12,7 @@
  Target Server Version : 12002000
  File Encoding         : 65001
 
- Date: 18/03/2024 16:04:05
+ Date: 19/03/2024 14:33:47
 */
 
 
@@ -27,7 +27,7 @@ CREATE TABLE [fwwb_schema].[Achievement] (
   [id] int  NOT NULL,
   [product_name] varchar(100) COLLATE Chinese_PRC_CI_AS  NULL,
   [product_description] text COLLATE Chinese_PRC_CI_AS  NULL,
-  [picture_url] varchar(255) COLLATE Chinese_PRC_CI_AS  NULL,
+  [source_url] varchar(255) COLLATE Chinese_PRC_CI_AS  NULL,
   [other] varchar(255) COLLATE Chinese_PRC_CI_AS  NULL
 )
 GO
@@ -57,10 +57,10 @@ EXEC sp_addextendedproperty
 GO
 
 EXEC sp_addextendedproperty
-'MS_Description', N'图片地址',
+'MS_Description', N'资源下载链接',
 'SCHEMA', N'fwwb_schema',
 'TABLE', N'Achievement',
-'COLUMN', N'picture_url'
+'COLUMN', N'source_url'
 GO
 
 EXEC sp_addextendedproperty
@@ -74,11 +74,11 @@ GO
 -- ----------------------------
 -- Records of Achievement
 -- ----------------------------
-INSERT INTO [fwwb_schema].[Achievement] ([id], [product_name], [product_description], [picture_url], [other]) VALUES (N'1', N'2023西湖论剑-11周年精华特刊
-', N'建没数宇中国是我国的重要国策。在《数宇中国建设整体布局规划〉 (以下简称《规划》)中明确了数字中国建设按照“2522”的整体框架进行布局。整体框架中，一方面着重强调了数字安全的重要性，数字安全和数字技术并列为支撑数字中国建设的两大能力。另一方面，“安全”在2522框架中无处不在——数字基础设施不可无安全保障，数据资源大循环不', N'123', NULL)
+INSERT INTO [fwwb_schema].[Achievement] ([id], [product_name], [product_description], [source_url], [other]) VALUES (N'1', N'2023西湖论剑-11周年精华特刊
+', N'建没数宇中国是我国的重要国策。在《数宇中国建设整体布局规划〉 (以下简称《规划》)中明确了数字中国建设按照“2522”的整体框架进行布局。整体框架中，一方面着重强调了数字安全的重要性，数字安全和数字技术并列为支撑数字中国建设的两大能力。另一方面，“安全”在2522框架中无处不在——数字基础设施不可无安全保障，数据资源大循环不', N'http://sa80c6d6d.hd-bkt.clouddn.com/2024/03/19/efd2e7ee8b6246ea8ce9d5b6a23e127a.zip', NULL)
 GO
 
-INSERT INTO [fwwb_schema].[Achievement] ([id], [product_name], [product_description], [picture_url], [other]) VALUES (N'2', N'2023数字安全能力洞察报告
+INSERT INTO [fwwb_schema].[Achievement] ([id], [product_name], [product_description], [source_url], [other]) VALUES (N'2', N'2023数字安全能力洞察报告
 ', N'数字经济成为全球新一轮科技革命和产业变革的重要引擎，将开启人类数字文明的新时代。数字安全的基础性作用日益突出，在数字化建设进程中，加紧实施国家信息化发展战略，筑牢可信可控的数字安全屏障，夯实数字基础设施安全底座，增强关键基础设施安全韧性，助力数字社会安全发展，已成为支撑现代化建设、增强国家综合实力的必然选择。', N'456', NULL)
 GO
 
@@ -301,7 +301,7 @@ GO
 SET IDENTITY_INSERT [fwwb_schema].[Event] ON
 GO
 
-INSERT INTO [fwwb_schema].[Event] ([event_name], [event_time], [event_location], [event_content], [is_live], [videoreplay_link], [subscribers_count], [event_popularity], [picture_url], [type], [event_end_time], [other], [id]) VALUES (N'格致论道@西湖论剑', N'2023-05-05 18:30:00.000', N'线上', N'“格致论道”是中国科学院计算机网络信息中心和中国科学院科学传播局联合主办的科学文化讲坛。致力于非凡思想的跨界交流，提倡以"格物致知"的精神探讨科技、教育、生活、未来的发展。', N'0', N'', N'47', N'111', NULL, N'1', N'2023-05-05 21:45:00.000', N'0', N'1')
+INSERT INTO [fwwb_schema].[Event] ([event_name], [event_time], [event_location], [event_content], [is_live], [videoreplay_link], [subscribers_count], [event_popularity], [picture_url], [type], [event_end_time], [other], [id]) VALUES (N'格致论道@西湖论剑', N'2023-05-05 18:30:00.000', N'线上', N'“格致论道”是中国科学院计算机网络信息中心和中国科学院科学传播局联合主办的科学文化讲坛。致力于非凡思想的跨界交流，提倡以"格物致知"的精神探讨科技、教育、生活、未来的发展。', N'0', N'', N'47', N'111', N'http://sa80c6d6d.hd-bkt.clouddn.com/2024/03/19/2d694d27a81f47f4be4c4a98c9fa9e59.png', N'1', N'2023-05-05 21:45:00.000', N'0', N'1')
 GO
 
 INSERT INTO [fwwb_schema].[Event] ([event_name], [event_time], [event_location], [event_content], [is_live], [videoreplay_link], [subscribers_count], [event_popularity], [picture_url], [type], [event_end_time], [other], [id]) VALUES (N'西湖论剑安全特训营·网络攻防蓝队实战技法进阶班', N'2023-05-04 09:00:00.000', N'线上', N'本次培训面向网络安全从业人员，特别是负责网络安全防护的蓝队人员，以及有意向从事蓝队工作的人员。 培训所需具备的基础能力：应具备网络安全的基本知识，了解常见的网络攻击手法和防御策略，', N'0', NULL, N'13', N'33', NULL, N'2', N'2023-05-04 18:00:00.000', N'0', N'2')

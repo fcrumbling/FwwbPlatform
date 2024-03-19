@@ -15,6 +15,6 @@ public class Achievement {
     private Long id;
     private String productName;
     private String productDescription;
-    private String pictureUrl;
+    private String sourceUrl;
     private String other;
 }
