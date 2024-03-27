@@ -16,8 +16,8 @@ public class MediaContentController {
     private MediaService mediaService;
 
     @GetMapping("/list")
-    public ResponseResult MediaList(Long type) {
-        return mediaService.MediaList(type);
+    public ResponseResult MediaList(Long type,Long pageNum,Long pageSize) {
+        return mediaService.MediaList(type,pageNum,pageSize);
     }
 
     //详情

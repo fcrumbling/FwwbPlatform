@@ -18,10 +18,10 @@ import java.util.Objects;
 public class MediaServiceImpl extends ServiceImpl<MediaMapper, MediaContent> implements MediaService {
     //------------------列表-------------------
     @Override
-    public ResponseResult MediaList(Long type) {
+    public ResponseResult MediaList(Long type,Long pageNum,Long pageSize) {
         LambdaQueryWrapper<MediaContent> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Objects.nonNull(type)&&type>0,MediaContent::getType,type);
-        Page<MediaContent> page = new Page<>();
+        Page<MediaContent> page = new Page<>(pageNum,pageSize);
         page(page,wrapper);
         List<MediaContent> mediaContentList = page.getRecords();
         List<MediaListVo> mediaListVos = BeanCopyUtils.copyBeanList(mediaContentList, MediaListVo.class);

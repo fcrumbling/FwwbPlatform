@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ExhibitorListVo {
     private Long id;
-    private String logo;
+    private String logourl;
 }
