@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class MediaListVo {
     private Long id;
     private Long type;
-    private String content;
+    private String pictureUrl;
+    private String summary;
     private String title;
 }

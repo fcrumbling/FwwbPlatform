@@ -33,13 +33,10 @@ public class EventRegisterServiceImpl extends ServiceImpl<EventRegisterMapper, R
         newregister.setEventid(eventid);
         newregister.setUserid(userId);
         save(newregister);
-        //注入service通过调用mybatisplus相关方法进行数据更新（save只能Register类）
         Event event = eventService.getById(eventid);
         event.setSubscribersCount(event.getSubscribersCount()+ DomainConstans.EVENT_REGISTER_ADD);
         eventService.updateById(event);
-        //在Register表里检查是否已经选取
-        //已选取则报错
-        //未选取需要在Event里更新报名人数，在Register里添加报名记录
+
         return ResponseResult.okResult();
     }
 }
