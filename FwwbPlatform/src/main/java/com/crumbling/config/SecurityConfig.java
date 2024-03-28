@@ -15,7 +15,6 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-//WebSecurityConfigurerAdapter是Security官方提供的类
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -25,7 +24,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    //把官方的PasswordEncoder密码加密方式替换成BCryptPasswordEncoder
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
@@ -58,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/Source/upload/{id}").authenticated()
                 .antMatchers("/download/{id}").authenticated()
                 .antMatchers("/comment/list").authenticated()
+                .antMatchers("/eventregister").authenticated()
                 // 除上面外的所有请求全部不需要认证即可访问
                 .anyRequest().permitAll();
 

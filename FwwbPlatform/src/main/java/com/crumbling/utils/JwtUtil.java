@@ -13,9 +13,7 @@ import java.util.UUID;
 
 public class JwtUtil {
 
-    //有效期为
     public static final Long JWT_TTL = 72 * 60 * 60 * 1000L;// 60 * 60 *1000  一个小时
-    //设置秘钥明文
     public static final String JWT_KEY = "huanfqc";
 
     public static String getUUID() {
@@ -23,24 +21,12 @@ public class JwtUtil {
         return token;
     }
 
-    /**
-     * 生成jtw
-     *
-     * @param subject token中要存放的数据（json格式）
-     * @return
-     */
     public static String createJWT(String subject) {
         JwtBuilder builder = getJwtBuilder(subject, null, getUUID());// 设置过期时间
         return builder.compact();
     }
 
-    /**
-     * 生成jtw
-     *
-     * @param subject   token中要存放的数据（json格式）
-     * @param ttlMillis token超时时间
-     * @return
-     */
+
     public static String createJWT(String subject, Long ttlMillis) {
         JwtBuilder builder = getJwtBuilder(subject, ttlMillis, getUUID());// 设置过期时间
         return builder.compact();
@@ -65,14 +51,6 @@ public class JwtUtil {
                 .setExpiration(expDate);
     }
 
-    /**
-     * 创建token
-     *
-     * @param id
-     * @param subject
-     * @param ttlMillis
-     * @return
-     */
     public static String createJWT(String id, String subject, Long ttlMillis) {
         JwtBuilder builder = getJwtBuilder(subject, ttlMillis, id);// 设置过期时间
         return builder.compact();
@@ -84,24 +62,12 @@ public class JwtUtil {
         System.out.println(claims);
     }
 
-    /**
-     * 生成加密后的秘钥 secretKey
-     *
-     * @return
-     */
     public static SecretKey generalKey() {
         byte[] encodedKey = Base64.getDecoder().decode(JwtUtil.JWT_KEY);
         SecretKey key = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
         return key;
     }
 
-    /**
-     * 解析
-     *
-     * @param jwt
-     * @return
-     * @throws Exception
-     */
     public static Claims parseJWT(String jwt) throws Exception {
         SecretKey secretKey = generalKey();
         return Jwts.parser()
