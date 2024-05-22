@@ -21,8 +21,3 @@ spring:
     url: jdbc:sqlserver://localhost:1433;DatabaseName=fwwb_platform;encrypt=true;trustServerCertificate=true
     username: sa
     password: 123456
-
-myoss:
-  xxaccessKey: ty4AotBfLiTwbeEA3VhHpGTx7cqXhsgrlh1DvkXm
-  xxsecretKey: 3ru3qjYHNBkOGJP-Mti-SCj7yEquaE8YrQOQC0Ps
-  xxbucket: fwwb-source
